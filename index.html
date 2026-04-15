@@ -1485,7 +1485,7 @@
   <section class="surprise-section" id="surpresa-final">
     <div class="reveal">
       <h2 class="surprise-title">Uma última surpresa para você</h2>
-      <p class="surprise-subtitle">Roletinha do amor - 2 giros especiais</p>
+      <p class="surprise-subtitle">Roletinha do amor - 3 giros especiais</p>
     </div>
 
     <div class="surprise-box reveal-scale">
@@ -1709,11 +1709,16 @@
     const couponBrandIcon = document.getElementById('coupon-brand-icon');
 
     const guaranteedPrizes = [
+      'Resgatar um pulo de bungee jump',
       'Jantar romântico para dois',
       'Cupom Shopee de R$ 300,00'
     ];
 
     const prizeCouponData = {
+      'Resgatar um pulo de bungee jump': {
+        code: 'BUNGEE-JUMP-AMOR',
+        buttonText: 'Resgatar pulo'
+      },
       'Jantar romântico para dois': {
         code: 'JANTAR-AMOR-2',
         buttonText: 'Resgatar jantar'
@@ -1726,7 +1731,7 @@
 
     // Índices visuais na roda (8 fatias de 45°).
     // O cálculo abaixo faz a ponta parar exatamente nesses setores.
-    const targetSlices = [2, 6];
+    const targetSlices = [0, 2, 6];
 
     let spinCount = 0;
     let wheelRotation = 0;
@@ -1815,7 +1820,7 @@
           spinBtn.disabled = false;
           spinBtn.textContent = 'Girar novamente';
         } else {
-          surpriseStatus.textContent = 'Parabéns! Você desbloqueou os 2 brindes!';
+          surpriseStatus.textContent = 'Parabéns! Você desbloqueou os 3 brindes!';
           surpriseFinal.textContent = 'Feliz aniversário, meu amor! Você merece o mundo inteiro.';
           spinBtn.textContent = 'Prêmios concluídos';
         }
